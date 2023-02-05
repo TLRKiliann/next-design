@@ -1,7 +1,20 @@
 @import 'fonts.scss';
 @import 'colors.scss';
 
-.divbtn {
-  display: flex;
-  justify-content: right;
+.gallery {
+  .divbtn {
+    display: flex;
+    justify-content: right;
+  }
+  .gridgallery {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1Fr 1Fr;
+    grid-template-rows: 1Fr 1Fr 1Fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+
+    border: 1px solid white;
+  }
 }

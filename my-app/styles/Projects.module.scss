@@ -1,7 +1,36 @@
 @import 'fonts.scss';
 @import 'colors.scss';
 
-.divbtn {
-  display: flex;
-  justify-content: right;
+
+.myprojects {
+  .divbtn {
+    display: flex;
+    justify-content: right;
+  }
+  .allprojects {
+    width: 900px;
+    margin: auto;
+    
+    border: 1px solid cyan;
+    .liprojects {
+      margin-top: 20px;
+      display: flex;
+      &:before {
+        margin-top: 2px;
+        content: "*";
+        margin-right: 10px;
+        font-size: 24px;
+        color: rgba(0,255,255, 0.8);
+      }
+      .linkprojects {
+        text-decoration: none;
+        font-size: 1.4rem;
+        color: whitesmoke;
+        .realignlogos {
+          display: flex;
+          flex-direction: row;
+        }
+      }
+    }
+  }
 }

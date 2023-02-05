@@ -46,26 +46,27 @@
     .titlebtncontainer {
       display: flex;
       align-items: center;
-      justify-content: space-evenly;
-    }
-    .secondtitle {
-      margin-top: 0px;
-      margin-bottom: 0px;
-      padding-top: 10px;
-      padding-bottom: 5px;
-      font-family: $akayakanadaka_font;
-      font-size: 2.2rem;
-      color: rgba(255,255,255,0.7);
+      justify-content: space-between;
+      .firsttitle {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        font-family: $akayakanadaka_font;
+        font-size: 2.2rem;
+        color: rgba(255,255,255,0.7);
+      }
     }
     .mainblocdiv{
       height: auto;
       margin: auto;
+      margin-top: 10px;
       padding: 20px 0px;
       display: grid;
       grid-template-columns: 1Fr 1Fr 1Fr;
       grid-template-rows: 1Fr 1Fr;
       grid-column-gap: 20px;
-      grid-row-gap: 20px;      
+      grid-row-gap: 20px;
       justify-items: center;
       .subblockdiv {
         width: 100%;
@@ -113,23 +114,32 @@
     .secondtitlebtncontainer {
       display: flex;
       align-items: center;
-      justify-content: space-evenly;
-      font-family: $akayakanadaka_font;
-      font-size: 2.2rem;
-      color: rgba(255,255,255,0.7);
+      justify-content: space-between;
+      .secondtitle {       
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        font-family: $akayakanadaka_font;
+        font-size: 2.2rem;
+        color: rgba(255,255,255,0.7);
+      }
     }
-    .divlist {
-      display: flex;
-      align-items: center;
-      .listsoft {
-        margin: 5px 0px;
-        font-size: 1.5rem;
-        color: rgba(0,255,255,0.5);
-        .linka {
-          margin-left: -7px;
-          font-family: $acme_font;
+    .softdiv {
+      margin-top: 10px;
+      .divlist {
+        display: flex;
+        align-items: center;
+        .listsoft {
+          margin: 5px 0px;
           font-size: 1.5rem;
           color: rgba(0,255,255,0.5);
+          .linka {
+            margin-left: -7px;
+            font-family: $acme_font;
+            font-size: 1.5rem;
+            color: rgba(0,255,255,0.5);
+          }
         }
       }
     }

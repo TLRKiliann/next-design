@@ -10,10 +10,10 @@ const Skills:React.FC = () => {
   const handleHome = () => {
     router.replace('/')
   }
+  
   const handleClickSkills = () => {
     setSwitchBtn(switchBtn => !switchBtn)
   }
-
   return (
     <>
       <div className={styles.skills}>
@@ -29,10 +29,9 @@ const Skills:React.FC = () => {
             <div className={styles.sectionone}>
 
               <div className={styles.titlebtncontainer}>
-                <h3 className={styles.secondtitle}>
+                <h3 className={styles.firsttitle}>
                   Hard Skills
                 </h3>
-              
                 <button type='button'
                   onClick={handleClickSkills}
                   className={styles.btnhard}
@@ -223,13 +222,10 @@ const Skills:React.FC = () => {
           ) : (
 
           <div className={styles.sectiontwo}>
-      
             <div className={styles.secondtitlebtncontainer}>
-
               <h3 className={styles.secondtitle}>
                 Softs Skills
               </h3>
-
               <button type='button'
                 onClick={handleClickSkills}
                 className={styles.btnsoft}
@@ -240,7 +236,7 @@ const Skills:React.FC = () => {
 
             <hr />
 
-            <div style={{marginLeft: "0px"}}>
+            <div className={styles.softdiv}>
               <div className={styles.divlist}>
                 <li className={styles.listsoft}>
                   <a className={styles.linka}>
@@ -284,7 +280,6 @@ const Skills:React.FC = () => {
                 </li>
               </div>
             </div>
-
           </div>
           )
         }
