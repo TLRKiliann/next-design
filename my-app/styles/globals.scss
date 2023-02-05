@@ -2,9 +2,51 @@
 @import 'colors.scss';
 
 :root {
-  background-color: $whitesmoke;
+  height: 100vh;
+  background: linear-gradient(120deg,
+    $darkgrey_24, 
+    $darkgreen);
 }
 
+h2 {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-family: "Akaya Kanadaka", cursive;
+  font-size: 4rem;
+  color: $whitesmoke;
+  text-shadow:
+  0px 2px 4px rgba(205,205,205,1),
+  0px 3px 0px rgba(165,165,165,1),
+  0px 4px 0px rgba(125,125,125,1),
+  0px 5px 0px rgba(85,85,85,1),
+  3px 8px 15px rgba(0,0,0, 0.1),
+  3px 8px 5px rgba(0,0,0, 0.3);
+}
+
+button {
+  padding: 5px 10px;
+  color: rgba(0,255,255, 0.8);
+  font-family: "Akaya Kanadaka", cursive;
+  font-size: 1.0rem;
+  background: linear-gradient(120deg,
+    $darkgrey_24, 
+    $darkgreen);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px rgba(0,255,255,0.8);
+  &:hover {
+    background: linear-gradient(120deg,
+      $darkgrey_44, 
+      rgba(0,255,255,0.2));
+    box-shadow: 0px 0px 7px rgba(0,255,255,0.8);
+  }
+  &:active {
+    color: $black;
+    background: rgba(0,255,255, 0.4);
+    box-shadow: 0px 0px 7px rgba(0,255,255,0);
+  }
+}
 
 /*
 body { font-family: "Acme", sans-serif; }
