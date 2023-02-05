@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
-import styles from '@/styles/Skills.module.scss'
+import styles from '@/styles/Gallery.module.scss'
 
-const Skills:React.FC = () => {
+const Gallery:React.FC = () => {
   const router = useRouter()
 
   const handleHome = () => {
@@ -15,10 +15,10 @@ const Skills:React.FC = () => {
             Go back to home
           </button>
         </div>
-        <h2>Skills</h2>
+        <h2>Gallery</h2>
       </div>
     </>
   )
 }
 
-export default Skills
+export default Gallery
