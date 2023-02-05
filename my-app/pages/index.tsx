@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -6,26 +6,14 @@ import styles from '@/styles/Home.module.scss'
 
 type MyurlsProps = {
   myurls: {
-    map: any
     id: number | null
     name: string
     url: string
   }
 }
 
-const Home:React.FC = () => {
-  const [myurls, setMyUrls] = useState<MyurlsProps[]>([])
-
-  useEffect(() => {
-    const handleComments = async () => {
-      const response = await fetch("/api/myurls")
-      const data: MyurlsProps[] = await response.json()
-      setMyUrls(data)
-    }
-    handleComments()
-    return () => console.log("useEffect clean-up !")
-  }, [])
-
+const Home:React.FC = ({myurls}: MyurlsProps) => {
+  //console.log(myurls)
   return (
     <>
       <Head>
@@ -88,7 +76,6 @@ const Home:React.FC = () => {
               </li>
             </div>
 
-
             <div className={styles.secondhomelinks}>
               {myurls.map((myurl: any) => (
                 <li key={myurl.id} className={styles.li}>
@@ -105,7 +92,6 @@ const Home:React.FC = () => {
             </div>
 
           </div>
-
 
           <div>
             <div className={styles.divimg}>
@@ -128,18 +114,12 @@ const Home:React.FC = () => {
 
 export default Home
 
-
-/*
-            {myurls.map((myurl: any) => (
-              <li key={myurl.id} className={styles.list}>
-                <Link
-                  target="_blank" 
-                  href={`${myurl.url}`}
-                  rel="noopener noreferrer"
-                  className={styles.link2}
-                >
-                  {myurl.name}
-                </Link>
-              </li>
-            ))}
-*/
+export const getStaticProps: GetStaticProps = async () => {
+  const response = await fetch("http://localhost:3000/api/myurls")
+  const data = await response.json()
+  return {
+    props: {
+      myurls: data,
+    }
+  }
+}

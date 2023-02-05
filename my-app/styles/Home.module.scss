@@ -8,7 +8,7 @@
 
 @mixin linearcolor(){
   background: linear-gradient(to right,
-    #f32170, #ff6b08);
+    $cyan, dodgerblue);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
