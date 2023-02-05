@@ -16,7 +16,7 @@
 @mixin listyle(){
   margin: 10px 40px;
   list-style: none;
-  font-family: "Akaya Kanadaka", cursive;
+  font-family: $akayakanadaka_font;
   font-size: 1.4rem;
 }
 
@@ -35,7 +35,7 @@
       padding-top: 30px;
       margin: auto;
       text-align: center;
-      font-family: "Akaya Kanadaka", cursive;
+      font-family: $akayakanadaka_font;
       font-size: 6rem;
       color: $whitesmoke;
       text-shadow:
