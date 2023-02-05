@@ -10,7 +10,7 @@ const Contact:React.FC = () => {
   return (
     <>
       <div>
-        <div>
+        <div className={styles.divbtn}>
           <button type="button" onClick={handleHome}>
             Go back to home
           </button>

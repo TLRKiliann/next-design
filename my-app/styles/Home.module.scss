@@ -4,61 +4,59 @@
 @mixin stylelink($width){
   margin-top: 20px;
   width: $width;
+}
 
-  border: 1px solid $black;
+@mixin linearcolor(){
+  background: linear-gradient(to right,
+    #f32170, #ff6b08);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 @mixin listyle(){
-  margin: 10px 10px;
+  margin: 10px 40px;
   list-style: none;
   font-family: "Akaya Kanadaka", cursive;
   font-size: 1.4rem;
-
-  border: 1px solid blue;
 }
 
 .main {
   width: 100%;
   margin-top: 10%;
-  padding: 0;
-
-  border: 1px solid orange;
-
   .firstcontainer {
-    margin: 50px;
-    box-shadow:
-    0px 0px 20px rgba(24,24,24,0.4);
-    border-radius: 12px;
+    margin: 10% 20%;
+    box-shadow: 0px 0px 20px rgba(0,255,255,0.4);
+    border-radius: 20px;
+    background: linear-gradient(120deg,
+      $darkgrey_24, 
+      $darkgreen);
     .titlehome {
-      padding: 20px;
+      padding: 0px;
+      padding-top: 30px;
       margin: auto;
       text-align: center;
-
-      font-size: 4rem;
+      font-family: "Akaya Kanadaka", cursive;
+      font-size: 6rem;
       color: $whitesmoke;
       text-shadow:
-      0px 2px 0px rgba(245,245,245,0.8),
-      0px 4px 0px rgba(245,245,245,0.6),
-      0px 6px 0px rgba(245,245,245,0.4),
-      0px 8px 0px rgba(245,245,245,0.2),
-      3px 8px 15px rgba(24,24,24, 0.5),
-      3px 8px 5px rgba(24,24,24, 0.2);
-      /*background: $whitesmoke;*/
+      0px 2px 4px rgba(205,205,205,1),
+      0px 3px 0px rgba(165,165,165,1),
+      0px 4px 0px rgba(125,125,125,1),
+      0px 5px 0px rgba(85,85,85,1),
+      3px 8px 15px rgba(0,0,0, 0.1),
+      3px 8px 5px rgba(0,0,0, 0.3);
       transform-style: preserve-3d;
     }
-  
     .linkcontainer {
       display: flex;
       justify-content: space-between;
-    
-      border: 1px solid black;
-
       .homelinks {
         @include stylelink(40%);
         .li {
           @include listyle();
           .link {
             text-decoration: none;
+            @include linearcolor();
           }
         }
       }
@@ -66,11 +64,10 @@
         @include stylelink(45%);
         .li {
           @include listyle();
-          
           text-align: right;
-
           .link {
             text-decoration: none;
+            @include linearcolor();
           }
         }
       }
@@ -79,7 +76,10 @@
       margin-top: 20px;
       display: flex;
       justify-content: center;
-      border: 1px solid blue;
+      .img {
+        filter: invert(100%);
+        -webkit-filter: invert(100%);
+      }
     }
   }
 }

@@ -39,7 +39,7 @@ const Home:React.FC = () => {
 
         <div className={styles.firstcontainer}>
           <h1 className={styles.titlehome}>
-            My Portfolio
+            Portfolio
           </h1>
 
           <div className={styles.linkcontainer}>
@@ -114,6 +114,7 @@ const Home:React.FC = () => {
                 width="100"
                 height="100"
                 alt="no img next"
+                className={styles.img}
               />
             </div>
           </div>
