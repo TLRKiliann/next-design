@@ -3,15 +3,19 @@
 
 .about {
   .divbtn {
-    display: flex;
-    justify-content: right;
+    position: fixed;
+    top: 4px;
+    right: 4px;
   }
   .articles {
     width: 90%;
     margin: auto;
     margin: 40px auto;
     border-radius: 20px;
-    box-shadow: 0px 0px 7px $cyan;
+    background: linear-gradient(120deg,
+      $darkgrey_24, 
+      $darkgreen);
+    box-shadow: 0px 0px 10px rgba(0,255,255,0.4);
     .h3 {
       width: 300px;
       padding-top: 20px;
@@ -31,7 +35,7 @@
       text-align: justify;
       font-family: $akayakanadaka_font;
       font-size: 1.4rem;
-      color: rgba(0,255,255, 0.6);
+      color: $nice_blue;
     }
   }
 }

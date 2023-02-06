@@ -1,31 +1,61 @@
 @import 'fonts.scss';
 @import 'colors.scss';
 
-
+@keyframes shadow3d {
+  0% {
+    transform: scale(0.99);
+    filter: drop-shadow(0px 0px 0px $black);
+  }
+  100% {
+    transform: scale(1.0);
+    filter: drop-shadow(15px 15px 1px $black);
+  }
+}
 .myprojects {
   .divbtn {
     display: flex;
     justify-content: right;
   }
   .allprojects {
-    width: 900px;
+    width: 700px;
+    padding: 20px;
     margin: auto;
-    
-    border: 1px solid cyan;
+    margin-top: 100px;
+    background: linear-gradient(120deg,
+      rgba(24,24,24, 0.8),
+      rgba(44,65,106, 0.8));
+    border-radius: 20px;
+    border: 2mm inset rgba(44,65,106, 0.7);
+    box-shadow: 0px 0px 7px rgba(44,65,106, 1);
+
     .liprojects {
       margin-top: 20px;
       display: flex;
       &:before {
-        margin-top: 2px;
-        content: "*";
+        content: "🌺";
         margin-right: 10px;
-        font-size: 24px;
+        margin-left: 10px;
+        font-size: 20px;
         color: rgba(0,255,255, 0.8);
       }
       .linkprojects {
         text-decoration: none;
         font-size: 1.4rem;
         color: whitesmoke;
+        filter: drop-shadow(15px 15px 1px $black);
+        transform: scale(1.0);
+
+        animation-name: shadow3d;
+        animation-delay: 0s;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease;
+        &:hover {
+          transition: ease-in-out, 0.2s;
+          transform: scale(0.99);
+          filter: drop-shadow(0px 0px 0px $black);
+          color: rgba(0,255,255, 0.8);
+        }
         .realignlogos {
           display: flex;
           flex-direction: row;

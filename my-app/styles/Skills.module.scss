@@ -72,17 +72,19 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        box-shadow: 0px 0px 4px $cyan;
+        
+        box-shadow: 0px 0px 10px rgba(0,255,255,0.4);
+
         border-radius: 15px;
-        border: 1px solid cyan;
         .h3titlesubblock {
           margin-top: 10px;
           margin-bottom: 10px;
-          padding-bottom: 5px;
+          padding-bottom: 3px;
           display: flex;
           align-items: center;
           justify-content: center;
           font-family: $akayakanadaka_font;
+          font-size: 1.4rem;
           color: rgba(0,255,255,0.5);
           border-bottom: 1px dashed rgba(0,255,255,0.5);
         }
@@ -93,7 +95,9 @@
             padding: 5px 0px;
             padding-left: 10px;
             font-family: $akayakanadaka_font;
-            background: rgba(0,50,100, 0.3);
+            
+            background: rgba(44,65,106, 0.4);
+
             color: rgba(255,255,255,0.7);
             .classa {
               margin-left: -7px;
