@@ -12,13 +12,14 @@ import styles from '@/styles/Projects.module.scss'
 
 type MyProjectsProps = {
   myprojects: {
+    map: any
     id: number
     name: string
     url: string
   }
 }
 
-const Projects:React.FC = ({myprojects}: MyProjectsProps) => {
+const Projects = ({myprojects}: MyProjectsProps) => {
   const router = useRouter()
 
   const handleHome = () => {
@@ -151,6 +152,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       myprojects: data
-    }
+    },
+    revalidate: 10
   }
 }

@@ -6,13 +6,14 @@ import styles from '@/styles/Home.module.scss'
 
 type MyurlsProps = {
   myurls: {
+    map: any
     id: number | null
     name: string
     url: string
   }
 }
 
-const Home:React.FC = ({myurls}: MyurlsProps) => {
+const Home = ({myurls}: MyurlsProps) => {
   //console.log(myurls)
   return (
     <>
@@ -120,6 +121,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       myurls: data,
-    }
+    },
+    revalidate: 10,
   }
 }
