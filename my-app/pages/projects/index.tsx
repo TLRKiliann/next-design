@@ -24,8 +24,7 @@ type MyProjectsProps = {
 const Projects = () => {
   const router = useRouter()
   const [myprojectsUrl] = useState(myprojects)
-  console.log(myprojectsUrl)
-
+  //console.log(myprojectsUrl)
   const handleHome = () => {
     router.replace('/')
   }

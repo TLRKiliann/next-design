@@ -17,7 +17,7 @@ type MyurlsProps = {
 
 const Home = () => {
   const [urls] = useState(myurls)
-  console.log(urls)
+  //console.log(urls)
   return (
     <>
       <Head>
@@ -115,7 +115,6 @@ const Home = () => {
     </>
   )
 }
-
 export default Home
 
 /*
