@@ -1,4 +1,6 @@
-import { GetStaticProps } from 'next'
+import { useState } from 'react'
+import { myurls } from './../data/myurls'
+//import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -13,8 +15,9 @@ type MyurlsProps = {
   }
 }
 
-const Home = ({myurls}: MyurlsProps) => {
-  //console.log(myurls)
+const Home = () => {
+  const [urls] = useState(myurls)
+  console.log(urls)
   return (
     <>
       <Head>
@@ -78,7 +81,7 @@ const Home = ({myurls}: MyurlsProps) => {
             </div>
 
             <div className={styles.secondhomelinks}>
-              {myurls.map((myurl: any) => (
+              {urls.map((myurl: any) => (
                 <li key={myurl.id} className={styles.li}>
                   <Link
                     target="_blank" 
@@ -115,6 +118,7 @@ const Home = ({myurls}: MyurlsProps) => {
 
 export default Home
 
+/*
 export const getStaticProps: GetStaticProps = async () => {
   const response = await fetch("http://localhost:3000/api/myurls")
   const data = await response.json()
@@ -125,3 +129,4 @@ export const getStaticProps: GetStaticProps = async () => {
     revalidate: 10,
   }
 }
+*/

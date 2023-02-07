@@ -1,4 +1,6 @@
-import { GetStaticProps } from 'next'
+import { useState } from 'react'
+import { myprojects } from './../../data/myprojects'
+//import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { TbBrandNextjs } from 'react-icons/tb'
@@ -19,8 +21,10 @@ type MyProjectsProps = {
   }
 }
 
-const Projects = ({myprojects}: MyProjectsProps) => {
+const Projects = () => {
   const router = useRouter()
+  const [myprojectsUrl] = useState(myprojects)
+  console.log(myprojectsUrl)
 
   const handleHome = () => {
     router.replace('/')
@@ -37,7 +41,7 @@ const Projects = ({myprojects}: MyProjectsProps) => {
         <h2>Projects</h2>
 
         <div className={styles.allprojects}>
-          {myprojects.map((myproject: any) => (
+          {myprojectsUrl.map((myproject: any) => (
             <li key={myproject.id} className={styles.liprojects}>
               <Link
                 target="_blank"
@@ -146,6 +150,7 @@ const Projects = ({myprojects}: MyProjectsProps) => {
 
 export default Projects
 
+/*
 export const getStaticProps: GetStaticProps = async () => {
   const response = await fetch('http://localhost:3000/api/myprojects')
   const data = await response.json()
@@ -156,3 +161,4 @@ export const getStaticProps: GetStaticProps = async () => {
     revalidate: 10
   }
 }
+*/
