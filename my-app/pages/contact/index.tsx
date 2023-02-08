@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import Layout from '../../components/Layout'
 import styles from '@/styles/Contact.module.scss'
 
 const Contact:React.FC = () => {
@@ -8,7 +9,7 @@ const Contact:React.FC = () => {
     router.replace('/')
   }
   return (
-    <>
+    <Layout>
       <div className={styles.contact}>
         <div className={styles.divbtn}>
           <button type="button" onClick={handleHome}>
@@ -23,7 +24,7 @@ const Contact:React.FC = () => {
           <h3 className={styles.h3xbottom}>Switzerland</h3>
         </div>
       </div>
-    </>
+    </Layout>
   )
 }
 

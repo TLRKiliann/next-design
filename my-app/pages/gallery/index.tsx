@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import Layout from '../../components/Layout'
 import styles from '@/styles/Gallery.module.scss'
 
 const Gallery:React.FC = () => {
@@ -8,7 +9,7 @@ const Gallery:React.FC = () => {
     router.replace('/')
   }
   return (
-    <>
+    <Layout>
       <div className={styles.gallery}>
         <div className={styles.divbtn}>
           <button type="button" onClick={handleHome}>
@@ -22,7 +23,7 @@ const Gallery:React.FC = () => {
         </div>
 
       </div>
-    </>
+    </Layout>
   )
 }
 

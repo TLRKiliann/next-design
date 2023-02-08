@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
-import {motion} from 'framer-motion'
+import Layout from '../../components/Layout'
 import styles from '@/styles/Skills.module.scss'
 
 const Skills:React.FC = () => {
@@ -16,7 +16,7 @@ const Skills:React.FC = () => {
     setSwitchBtn(switchBtn => !switchBtn)
   }
   return (
-    <>
+    <Layout>
       <div className={styles.skills}>
         <div className={styles.divbtn}>
           <button type="button" onClick={handleHome}>
@@ -285,7 +285,7 @@ const Skills:React.FC = () => {
           )
         }
       </div>
-    </>
+    </Layout>
   )
 }
 

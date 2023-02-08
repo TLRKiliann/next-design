@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import Layout from '../../components/Layout'
 import styles from '@/styles/About.module.scss'
 
 const About:React.FC = () => {
@@ -9,7 +10,7 @@ const About:React.FC = () => {
     router.replace('/')
   }
   return (
-    <>
+    <Layout>
       <div className={styles.about}>
         <div className={styles.divbtn}>
           <button type="button" onClick={handleHome}>
@@ -85,7 +86,7 @@ const About:React.FC = () => {
         </div>
 
       </div>
-    </>
+    </Layout>
   )
 }
 
