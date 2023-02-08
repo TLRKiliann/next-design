@@ -6,12 +6,19 @@ import '@/styles/globals.scss'
 //import {Layout} from './../components/Layout'
 import type { AppProps } from 'next/app'
 
-export default function App({ Component, pageProps }: AppProps) {
-  const router = useRouter() as any
-
+export default function App({ Component, pageProps, router }: AppProps) {
   return (
+    <AnimatePresence mode="wait" initial={false}>
+      <motion.div>
+        <Component {...pageProps} key={router.asPath}/>
+      </motion.div>
+    </AnimatePresence>
+  )
+}
+
+
+/*
     <motion.div
-      key={router.route}
       initial="initialState"
       animate="animateState"
       exit="exitState"
@@ -24,13 +31,8 @@ export default function App({ Component, pageProps }: AppProps) {
         duration: 0.75,
       }}
     >
-      <Component {...pageProps}/>
+      <Component {...pageProps} key={router.asPath}/>
     </motion.div>
-  )
-}
-
-
-/*
 
       <AnimatePresence
         initial={false}
