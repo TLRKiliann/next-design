@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import {motion} from 'framer-motion'
 import styles from '@/styles/Skills.module.scss'
 
 const Skills:React.FC = () => {
@@ -11,7 +12,7 @@ const Skills:React.FC = () => {
     router.replace('/')
   }
   
-  const handleClickSkills = () => {
+  const handleClickSkills = ({children}: any) => {
     setSwitchBtn(switchBtn => !switchBtn)
   }
   return (
