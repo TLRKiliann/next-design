@@ -9,13 +9,19 @@ const Contact:React.FC = () => {
   }
   return (
     <>
-      <div>
+      <div className={styles.contact}>
         <div className={styles.divbtn}>
           <button type="button" onClick={handleHome}>
             Go back to home
           </button>
         </div>
         <h2>Contact</h2>
+        <div className={styles.divcontact}>
+          <h3 className={styles.h3xtop}>Cédric Kuchen</h3>
+          <h3 className={styles.h3yleft}>Web Developer & Software Programmer</h3>
+          <h3 className={styles.h3yright}>cat.3st3ban@gmail.com</h3>
+          <h3 className={styles.h3xbottom}>Switzerland</h3>
+        </div>
       </div>
     </>
   )

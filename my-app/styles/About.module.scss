@@ -3,15 +3,19 @@
 
 .about {
   .divbtn {
-    display: flex;
-    justify-content: right;
+    position: fixed;
+    top: 4px;
+    right: 4px;
   }
   .articles {
     width: 90%;
     margin: auto;
     margin: 40px auto;
     border-radius: 20px;
-    box-shadow: 0px 0px 7px $cyan;
+    background: linear-gradient(120deg,
+      $darkgrey_24, 
+      $darkgreen);
+    box-shadow: 0px 0px 10px rgba(0,255,255,0.4);
     .h3 {
       width: 300px;
       padding-top: 20px;
@@ -21,7 +25,7 @@
       font-family: $acme_font;
       font-size: 1.4rem;
       background: linear-gradient(to right,
-        #f32170, #ff6b08, #ffff00);
+        $cyan, dodgerblue);
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
     }
@@ -31,7 +35,7 @@
       text-align: justify;
       font-family: $akayakanadaka_font;
       font-size: 1.4rem;
-      color: $cyan;
+      color: $nice_blue;
     }
   }
 }

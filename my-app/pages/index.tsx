@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { myurls } from './../data/myurls'
+//import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -13,19 +15,9 @@ type MyurlsProps = {
   }
 }
 
-const Home:React.FC = () => {
-  const [myurls, setMyUrls] = useState<MyurlsProps[]>([])
-
-  useEffect(() => {
-    const handleComments = async () => {
-      const response = await fetch("/api/myurls")
-      const data: MyurlsProps[] = await response.json()
-      setMyUrls(data)
-    }
-    handleComments()
-    return () => console.log("useEffect clean-up !")
-  }, [])
-
+const Home = () => {
+  const [urls] = useState(myurls)
+  console.log(urls)
   return (
     <>
       <Head>
@@ -88,9 +80,8 @@ const Home:React.FC = () => {
               </li>
             </div>
 
-
             <div className={styles.secondhomelinks}>
-              {myurls.map((myurl: any) => (
+              {urls.map((myurl: any) => (
                 <li key={myurl.id} className={styles.li}>
                   <Link
                     target="_blank" 
@@ -105,7 +96,6 @@ const Home:React.FC = () => {
             </div>
 
           </div>
-
 
           <div>
             <div className={styles.divimg}>
@@ -128,18 +118,15 @@ const Home:React.FC = () => {
 
 export default Home
 
-
 /*
-            {myurls.map((myurl: any) => (
-              <li key={myurl.id} className={styles.list}>
-                <Link
-                  target="_blank" 
-                  href={`${myurl.url}`}
-                  rel="noopener noreferrer"
-                  className={styles.link2}
-                >
-                  {myurl.name}
-                </Link>
-              </li>
-            ))}
+export const getStaticProps: GetStaticProps = async () => {
+  const response = await fetch("http://localhost:3000/api/myurls")
+  const data = await response.json()
+  return {
+    props: {
+      myurls: data,
+    },
+    revalidate: 10,
+  }
+}
 */
