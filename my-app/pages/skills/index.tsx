@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import Layout from '../../components/Layout'
 import styles from '@/styles/Skills.module.scss'
 
 const Skills:React.FC = () => {
@@ -11,11 +12,11 @@ const Skills:React.FC = () => {
     router.replace('/')
   }
   
-  const handleClickSkills = () => {
+  const handleClickSkills = ({children}: any) => {
     setSwitchBtn(switchBtn => !switchBtn)
   }
   return (
-    <>
+    <Layout>
       <div className={styles.skills}>
         <div className={styles.divbtn}>
           <button type="button" onClick={handleHome}>
@@ -284,7 +285,7 @@ const Skills:React.FC = () => {
           )
         }
       </div>
-    </>
+    </Layout>
   )
 }
 

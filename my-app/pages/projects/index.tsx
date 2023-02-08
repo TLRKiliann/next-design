@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Layout from '../../components/Layout'
 import { myprojects } from './../../data/myprojects'
 //import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
@@ -22,15 +23,14 @@ type MyProjectsProps = {
 }
 
 const Projects = () => {
-  const router = useRouter()
+  const router = useRouter() as any
   const [myprojectsUrl] = useState(myprojects)
-  console.log(myprojectsUrl)
-
+  //console.log(myprojectsUrl)
   const handleHome = () => {
     router.replace('/')
   }
   return (
-    <>
+    <Layout>
       <div className={styles.myprojects}>
         <div className={styles.divbtn}>
           <button type="button" onClick={handleHome}>
@@ -144,7 +144,7 @@ const Projects = () => {
           ))}
         </div>
       </div>
-    </>
+    </Layout>
   )
 }
 
